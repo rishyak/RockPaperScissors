@@ -5,8 +5,8 @@ from dataclasses import dataclass
 class Scoreboard:
     """Class to keep track of scores"""
 
-    computer: int
-    user: int
+    computer: int = 0
+    user: int = 0
 
     def handle_score(self, winner: int) -> None:
         """Prints who wins and the score
