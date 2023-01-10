@@ -1,5 +1,6 @@
 import os
 from random import choice
+from RockPaperScissors.scoreboard import Scoreboard
 
 start = """Welcome to Rock Paper Scissors!
 
@@ -91,3 +92,26 @@ def simulate_game(user_input: str) -> int:
         return 1
     else:
         return 2
+
+
+def play():
+    """Function to repeatedly play rock paper scissors"""
+    start_screen()
+
+    score = Scoreboard()
+
+    while True:
+        user_input = input(game_prompt)
+
+        match user_input:
+            case "1" | "2" | "3":
+                winner = simulate_game(user_input)
+                print()
+                score.handle_score(winner)
+                print()
+            case "Q" | "q":
+                clear_screen()
+                score.print_final_score()
+                return
+            case _:
+                print("Invalid input. Try again.\n")
