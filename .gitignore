@@ -1,0 +1,12 @@
+# Virtual Environment
+.venv
+
+# OS specific directories
+.DS_Store
+
+# Text editor directories
+.vscode
+.idea
+
+# Python-specific directories
+__pycache__
