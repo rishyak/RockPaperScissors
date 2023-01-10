@@ -76,7 +76,7 @@ def simulate_game(user_input: str) -> int:
     """
     choices = ["Rock", "Paper", "Scissors"]
     computer_choice = choice(choices)
-    user_choice = choice(int(user_input) - 1)
+    user_choice = choices[int(user_input) - 1]
 
     print(f"You chose {user_choice}")
     print(f"Computer chose {computer_choice}")
