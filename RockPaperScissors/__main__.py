@@ -1,5 +1,5 @@
-from rps import rps
-from rps.scoreboard import Scoreboard
+from RockPaperScissors import rps
+from RockPaperScissors.scoreboard import Scoreboard
 
 
 def main() -> None:
