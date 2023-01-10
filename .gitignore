@@ -10,3 +10,4 @@
 
 # Python-specific directories
 __pycache__
+*.egg-info
