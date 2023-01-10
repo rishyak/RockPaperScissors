@@ -1,7 +1,7 @@
 import os
 from random import choice
 
-start_screen = """Welcome to Rock Paper Scissors!
+start = """Welcome to Rock Paper Scissors!
 
 Rock Paper Scissors is a simple game played between two players. 
 
@@ -57,7 +57,7 @@ def clear_screen() -> None:
 def start_screen() -> None:
     """Show start screen prompts"""
     clear_screen()
-    input(start_screen)
+    input(start)
     clear_screen()
     input(rules)
     clear_screen()
