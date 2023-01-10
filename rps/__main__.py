@@ -1,58 +1,6 @@
 import os
 from rps import rps
 
-start_screen = """Welcome to Rock Paper Scissors!
-
-Rock Paper Scissors is a simple game played between two players. 
-
-It has three possible outcomes: Win, Loss, Draw.
-
-The rules are quite simple. 
-
-Press Enter to continue. 
-"""
-
-rules = """Both players make a choice and reveal their choices simultaneously.
-
-All you need to remember is:
-    - Rock beats Scissors
-    - Paper beats Rock
-    - Scissors beat Paper
-
-The player with the winning object is awarded one point.
-
-If both players play the same object, such as rock-rock, then it's a tie. 
-No points are awarded in case of a tie.
-
-Press Enter to continue.
-"""
-
-how_to = """Controls:
-    - 1: Rock
-    - 2: Paper
-    - 3: Scissors
-    - Q/q: Quit
-
-To confirm your choice after selecting, press "Enter" or "Return".
-
-Press Enter to start. Good luck!
-"""
-
-game_prompt = """Make your selection.
-1: Rock
-2: Paper
-3: Scissors
-Q/q: Quit
-
-To confirm your choice after selecting, press "Enter" or "Return".
-
-"""
-
-
-def clear_screen() -> None:
-    """Clears terminal screen"""
-    os.system("cls" if os.name == "nt" else "clear")
-
 
 scoreboard = {
     "User": 0,
@@ -92,16 +40,16 @@ def print_final_score() -> None:
 
 def main() -> None:
     """Main code for the game"""
-    clear_screen()
-    input(start_screen)
-    clear_screen()
-    input(rules)
-    clear_screen()
-    input(how_to)
-    clear_screen()
+    rps.clear_screen()
+    input(rps.start_screen)
+    rps.clear_screen()
+    input(rps.rules)
+    rps.clear_screen()
+    input(rps.how_to)
+    rps.clear_screen()
 
     while True:
-        user_input = input(game_prompt)
+        user_input = input(rps.game_prompt)
 
         match user_input:
             case "1" | "2" | "3":
@@ -110,7 +58,7 @@ def main() -> None:
                 handle_score(winner)
                 print()
             case "Q" | "q":
-                clear_screen()
+                rps.clear_screen()
                 print_final_score()
                 return
             case _:
