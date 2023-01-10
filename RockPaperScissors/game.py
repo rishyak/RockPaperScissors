@@ -54,6 +54,17 @@ def clear_screen() -> None:
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def start_screen() -> None:
+    """Show start screen prompts"""
+    clear_screen()
+    input(start_screen)
+    clear_screen()
+    input(rules)
+    clear_screen()
+    input(how_to)
+    clear_screen()
+
+
 def simulate_game(user_input: str) -> int:
     """Simulates game and decides who wins
 
