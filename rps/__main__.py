@@ -1,4 +1,3 @@
-import os
 from rps import rps
 from rps.scoreboard import Scoreboard
 

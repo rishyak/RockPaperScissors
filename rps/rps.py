@@ -1,3 +1,4 @@
+import os
 from random import choice
 
 start_screen = """Welcome to Rock Paper Scissors!
