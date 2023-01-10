@@ -90,8 +90,31 @@ def print_final_score() -> None:
     print(f"The final score is {scoreboard['User']}-{scoreboard['Computer']}")
 
 
-def main():
-    pass
+def main() -> None:
+    """Main code for the game"""
+    clear_screen()
+    input(start_screen)
+    clear_screen()
+    input(rules)
+    clear_screen()
+    input(how_to)
+    clear_screen()
+
+    while True:
+        user_input = input(game_prompt)
+
+        match user_input:
+            case "1" | "2" | "3":
+                winner = rps.simulate_game(user_input)
+                print()
+                handle_score(winner)
+                print()
+            case "Q" | "q":
+                clear_screen()
+                print_final_score()
+                return
+            case _:
+                print("Invalid input. Try again.\n")
 
 
 if __name__ == "__main__":
